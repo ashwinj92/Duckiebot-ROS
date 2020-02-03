@@ -1,0 +1,8 @@
+<launch>
+
+  <group ns="homework1">
+    <node pkg="homework1_code" name="talker" type="talker.py"/>
+    <node pkg="homework1_code" name="listener" type="listener.py"/>
+  </group>
+
+</launch>
