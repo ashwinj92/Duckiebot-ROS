@@ -3,6 +3,8 @@
   <group ns="homework1">
     <node pkg="homework1_code" name="talker" type="talker.py"/>
     <node pkg="homework1_code" name="listener" type="listener.py"/>
+    <node pkg="homework2" name="mediator" type="mediator.py"/>
+    <remap from="chatter" to="newtopic" />
   </group>
 
 </launch>
