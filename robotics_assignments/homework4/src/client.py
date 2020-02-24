@@ -21,8 +21,9 @@ def changemode():
      time.sleep(0.5)
      modeSelect = random.randint(1, 10)
      rospy.loginfo("Requesting a mode change to: "+ str(modeSelect))
-     time.sleep(0.5)
      data = request(modeSelect)
+     rospy.loginfo("sleep for 0.5 seconds ")     
+     time.sleep(0.5)
      message = "Current mode on the server is: " + str(data) 
      rospy.loginfo(message)
    
