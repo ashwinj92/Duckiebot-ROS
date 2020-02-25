@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="homework4" name="server" type="server.py"/>
-    <node pkg="homework4" name="client" type="client.py"/>
+    <node pkg="homework4" name="server1" type="server1.py"/>
+    <node pkg="homework4" name="client1" type="client1.py"/>
     <param name="mode" value="7" />
 </launch>
