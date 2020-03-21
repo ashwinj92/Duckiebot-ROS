@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find odometry_hw)/launch/odom_hw.launch"/>
+    <node pkg="homework6" name="genodo" type="genodo.py"/>
+</launch>

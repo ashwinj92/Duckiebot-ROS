@@ -1,17 +1,36 @@
 #!/usr/bin/env python
 
+from math import sin,cos,pi
 import rospy
+from geometry_msgs.msg import Vector3
+import matplotlib.pyplot as plt
 from odometry_hw.msg import *
 import time
 import random 
 
+xval = 0.0
+yval = 0.0
+stheta = 0.0
 def callback(data):
+        global xval
+        global yval
+        global pub
+        global stheta
         pose = Pose2D()
-        pose.x = data.dist_wheel_left
-        pose.y = data.dist_wheel_right
-        pose.x = xval+0.1
-        pose.y = yval+0.1
-        pose.theta =  random.uniform(0.0,90.0)   
+        left = data.dist_wheel_left
+        right = data.dist_wheel_right
+        delTheta = 0.0
+        delS = (left+right)/2
+        alpha = (right-left)/0.1
+        delTheta = alpha
+        delX = delS *(cos(stheta + delTheta/2))
+        delY = delS *(sin(stheta + delTheta/2))
+        xval = xval + delX
+        yval = yval + delY
+        stheta = stheta + delTheta
+        pose.x = xval
+        pose.y = yval
+        pose.theta = stheta
         rospy.loginfo(rospy.get_caller_id() + "entered callback")
         pub.publish(pose)
 
