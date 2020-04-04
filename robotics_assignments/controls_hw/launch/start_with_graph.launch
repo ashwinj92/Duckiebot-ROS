@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="controls_hw" name="vehicle_dynamics" type="vehicle_dynamics.py"/>
+    <node name="output_plot" pkg="rqt_plot" type="rqt_plot" args="/desired /position" />
+</launch>

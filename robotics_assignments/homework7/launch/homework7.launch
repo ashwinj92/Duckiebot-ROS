@@ -1,0 +1,4 @@
+<launch>
+<node pkg="homework7" name="stop_truck" type="truckstop.py"/>
+<include file="$(find controls_hw)/launch/start_with_graph.launch"/>
+</launch>
