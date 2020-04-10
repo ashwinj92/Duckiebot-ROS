@@ -1,0 +1,4 @@
+<launch>
+<node pkg="homework8" name="image_cropper" type="crop_image.py"/>
+<include file="$(find image_processing_hw)/launch/image_pub.launch"/>
+</launch>
