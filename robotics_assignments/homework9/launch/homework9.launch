@@ -1,0 +1,4 @@
+<launch>
+<node pkg="homework9" name="extract_lines" type="extract_lines.py"/>
+<include file="$(find homework8)/launch/homework8.launch"/>
+</launch>

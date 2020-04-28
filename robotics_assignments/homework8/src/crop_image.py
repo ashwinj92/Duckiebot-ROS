@@ -10,10 +10,10 @@ class ImageCropper:
     def __init__(self):
         # Instatiate the converter class once by using a class member
         self.bridge = CvBridge()
-        rospy.Subscriber("image", Image, self.flipper_cb)
+        rospy.Subscriber("image", Image, self.cropper_cb)
         self.pub = rospy.Publisher("cropped", Image, queue_size=10)
     
-    def flipper_cb(self, msg):
+    def cropper_cb(self, msg):
         # convert to a ROS image using the bridge
         cv_img = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         
