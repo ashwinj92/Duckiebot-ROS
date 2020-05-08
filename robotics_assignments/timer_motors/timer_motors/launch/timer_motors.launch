@@ -1,3 +1,0 @@
-<launch>
-    <node pkg="timer_motors" name="timer" type="motors_time.py"/>
-</launch>

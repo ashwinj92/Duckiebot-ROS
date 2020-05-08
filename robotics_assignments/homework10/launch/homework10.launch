@@ -1,0 +1,4 @@
+<launch>
+<node pkg="homework10" name="edge_detect" type="edge_detect.py"/>
+<include file="$(find homework9)/launch/homework9.launch"/>
+</launch>
