@@ -1,0 +1,4 @@
+<launch>
+<node pkg="mp3" name="mp3" type="lines.py"/>
+<param name="botname/line_detector_node/verbose type="boolean" value="true" />
+</launch>
