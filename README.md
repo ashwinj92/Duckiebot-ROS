@@ -1,4 +1,4 @@
-> **Elimination of Glare for Improved Lane Following** **Final Report**
+# Elimination of Glare for Improved Lane Following 
 
 Project timeline ( 4 months):
 
