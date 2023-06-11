@@ -54,8 +54,7 @@ makes use of k-means clustering and convex optimization in order to
 process a color balanced image that tends to offset the effects of
 background lighting which may be fluorescent or yellow.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image1.png){width="6.5in"
-height="1.297221128608924in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image1.png)
 
 **Emulation of real time driving conditions**
 
