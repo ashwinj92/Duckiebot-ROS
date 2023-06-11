@@ -1,10 +1,4 @@
 > **Elimination of Glare for Improved Lane Following** **Final Report**
->
-> *University of Massachusetts at Lowell*\
-> EECE.5560: Robotics\
-> 11 May 2020
-
-By: ASHWIN JAGDEESHA
 
 **Introduction**
 
@@ -66,18 +60,15 @@ following conditions were successfully realized.
 
 Glare due to headlights during the night
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image2.png){width="6.815277777777778in"
-height="1.8166655730533683in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image2.png)
 
 Glare due to overhead street-lights
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image3.png){width="6.499998906386701in"
-height="2.022222222222222in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image3.png)
 
 > Glare due to sunlight falling partly wet/polished surface
 >
-> ![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image4.png){width="6.013887795275591in"
-> height="2.05in"}
+> ![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image4.png)
 >
 > **Problem**
 >
@@ -92,13 +83,11 @@ height="2.022222222222222in"}
 
 Color Detection
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image5.png){width="6.5in"
-height="2.515277777777778in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image5.png)
 
 Edge Detection
 
-> ![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image6.png){width="6.5in"
-> height="2.2874989063867015in"}
+> ![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image6.png)
 >
 > **Contour Detection**
 >
@@ -106,10 +95,13 @@ Edge Detection
 > is the successful detection and separation of glare in the form of
 > unwanted contours from the input image.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image7.png){width="5.716666666666667in"
-height="3.0347222222222223in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image7.png)
 
-cv2.findContours() and cv2.drawContours() function have been used in our
+```python
+cv2.findContours() and cv2.drawContours() 
+```
+
+function have been used in our
 conditional analysis for this purpose.
 
 **First Method for Glare Removal**
@@ -122,8 +114,7 @@ we used for our test cases are the same color as the lines that we wish
 to keep. The original image arrives, which, in the case of our test
 cases, includes a large patch of false edges on the road.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image8.png){width="4.451388888888889in"
-height="2.5208333333333335in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image8.png)
 
 These false edges are caused by the glare of light on the road, which
 changes the color that the camera perceives and tricks any edge
@@ -133,8 +124,7 @@ function which draws dark contour lines around all edges in the picture.
 This is the first stage of canny edge detection. The resultant image has
 most of its light glare now covered by the dark contours.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image9.png){width="4.298611111111111in"
-height="2.4972222222222222in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image9.png)
 
 These contours are indiscriminate and outline all edges. Unfortunately,
 the artificial contours still produce some false edges against the
@@ -142,8 +132,7 @@ original road. Some white pixels that escaped the dark contouring are
 also visible. To fix this, the image is slightly blurred before the
 second canny edge detection is applied.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image10.png){width="4.318054461942257in"
-height="2.5in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image10.png)
 
 The blur itself is very subtle, as we wish to keep the features of the
 lines accurate. It is enough to smooth out both the stray white pixels
@@ -151,8 +140,7 @@ and the sharpness of the contours against the road. The edge detection
 now sees no false edges, producing only the outlines of the lines that
 actually exist.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image11.png){width="4.137498906386702in"
-height="2.3027777777777776in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image11.png)
 
 Next, the original lines must be added back. This can easily be done
 with a bitwise AND function, but that would require the canny outlines
@@ -168,16 +156,14 @@ fill from one side of the road to the other. It is not implemented
 vertically. In this way, the transformation fills the road's lines like
 scanlines on a cathode ray television.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image12.png){width="4.0in"
-height="2.158332239720035in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image12.png)
 
 Now, the filled lines can be put into a bitwise AND function with the
 original (unblurred, un-contoured) image and our final output is
 achieved: the original road lines on a pitch-black, glare-less road.
 
 .
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image13.png){width="3.522222222222222in"
-height="3.076388888888889in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image13.png)
 
 While this method of glare detection is well suited for most cases it
 may sometimes consume more computational time because of which there may
@@ -200,9 +186,8 @@ having less area and irregular shape are extracted in a mask image.
 
 Sample Mask Image
 
-> ![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image14.png){width="4.972222222222222in"
-> height="2.616665573053368in"}
-
+> ![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image14.png)
+> 
 This mask image is in turn used to create black regions to replace glare
 in the input image by the use bitwise_not and bitwise_and operators. The
 following step involves filling in the black regions with test colors of
