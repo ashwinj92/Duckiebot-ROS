@@ -1,5 +1,37 @@
 > **Elimination of Glare for Improved Lane Following** **Final Report**
 
+Project timeline ( 4 months):
+
+ A. Basic control system code and their associated math
+ 
+ B. ROS Nodes for Localization, Mapping, Controllers, Messaging
+ 
+ C. Test bench for PID controllers
+ 
+ D. Mapping controllers to Image processed pipeline( AntiInstagram Node optimization) 
+ 
+ E. Implementing Lane following using simple control system (PID)
+ 
+ F. Use PID controller + E
+ 
+ G. Detecting glare ( Noises) 
+ 
+
+```mermaid
+
+graph TD;
+    A-->B;
+    B-->D;
+    B-->F;
+    D-->E;
+    E-->F;
+    B-->G;
+    F-->G;
+    C-->F;
+```
+
+
+
 **Introduction**
 
 Present day advancements in chip design, high speed internet
