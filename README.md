@@ -199,14 +199,10 @@ When the threshold area for detecting of unwanted contours limited to 80
 units and the number of vertices for detecting unwanted shapes is kept
 at more than 5 the following results are obtained.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image15.png){width="6.5in"
-height="2.4763888888888888in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image15.png)
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image16.png){width="6.5in"
-height="2.3138877952755905in"}
-
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image17.png){width="6.5in"
-height="2.286111111111111in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image16.png)
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image17.png)
 
 With enhanced degrees of freedomas far as the tunable parameters are
 concerned-threshold intensity for edge detection, threshold area and
@@ -229,8 +225,7 @@ coding, transmission, and processing steps. It is very difficult to
 remove noise from the digital images without the prior knowledge of
 filtering techniques.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image18.png){width="5.983333333333333in"
-height="3.1666655730533684in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image18.png)
 
 **Sources of Image noise:**\
 1.While image being sent electronically from one place to another.
@@ -283,8 +278,7 @@ with the glare found.
 The glare is found as a mask which is then coverted to white pixels and
 superimposed onto the same image which yields the results below.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image19.png){width="4.725in"
-height="3.3333333333333335in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image19.png)
 
 **Image showing the detected glare**
 
@@ -298,25 +292,20 @@ The results image of Lane detection from Duckietown code with using the
 second method of the glare elimination with a high amount of Gaussian
 noise is attached below.
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image20.png){width="5.866666666666666in"
-height="3.475in"}
-
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image20.png)
 Mean = 35 ,Variance = 35 and Sigma = variance0.5
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image21.png){width="5.875in"
-height="3.6999989063867016in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image21.png)
 
 Mean = 0.1 Variance = 0.1
 
 **Images showing the improvement in Lane detection with reducing trend
 of Gaussian Noise.**
 
-![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image22.png){width="6.5in"
-height="3.0638877952755905in"}
+![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image22.png)
 
-> ![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image23.png){width="5.1819444444444445in"
-> height="2.640277777777778in"}
-
+> ![](vertopal_7410f44bfb144972a7a6ddc03748da2c/media/image23.png)
+> 
 Although the findings are not very concrete they prove the fact that
 there is some accuracy in elimination of the glares as variance of 0.1
 may correspond to the nature of the duckietown surface and also the
